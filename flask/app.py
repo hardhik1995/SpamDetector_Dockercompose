@@ -16,8 +16,8 @@ def home():
 
 @app.route('/predict',methods=['POST'])
 def predict():
-	df= pd.read_csv("G:/ANALYTICS_WORLD_R_SAS/python_world/1.all the datasets/spam.csv", encoding="latin-1")
-	df.drop(['Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4'], axis=1, inplace=True)
+	df= pd.read_csv("data/spam.csv", encoding="latin-1")
+	#df.drop(['Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4'], axis=1, inplace=True)
 	# Features and Labels
 	df['label'] = df['class'].map({'ham': 0, 'spam': 1})
 	X = df['message']
